@@ -35,6 +35,10 @@
 
 #import "BITCrashReportTextFormatter.h"
 
+#ifndef CPU_SUBTYPE_ARM_V7S
+#define CPU_SUBTYPE_ARM_V7S		((cpu_subtype_t) 11) /* Swift */
+#endif
+
 /**
  * Sort PLCrashReportBinaryImageInfo instances by their starting address.
  */
@@ -72,7 +76,7 @@ static NSInteger binaryImageSort(id binary1, id binary2, void *context) {
  *
  * @return Returns the formatted result on success, or nil if an error occurs.
  */
-+ (NSString *)stringValueForCrashReport:(PLCrashReport *)report {
++ (NSString *)stringValueForCrashReport:(PLCrashReport *)report crashReporterKey:(NSString *)crashReporterKey {
 	NSMutableString* text = [NSMutableString string];
 	boolean_t lp64 = true; // quiesce GCC uninitialized value warning
     
@@ -144,6 +148,7 @@ static NSInteger binaryImageSort(id binary1, id binary2, void *context) {
             switch (report.systemInfo.architecture) {
                 case PLCrashReportArchitectureARMv6:
                 case PLCrashReportArchitectureARMv7:
+                case PLCrashReportArchitectureARMv7s:
                     codeType = @"ARM";
                     lp64 = false;
                     break;
@@ -169,15 +174,21 @@ static NSInteger binaryImageSort(id binary1, id binary2, void *context) {
 
     {
         NSString *reportGUID = @"[TODO]";
-        if (report.hasReportInfo && report.reportInfo.reportGUID != nil)
-            reportGUID = report.reportInfo.reportGUID;
-      
+        if ([report respondsToSelector:@selector(reportInfo)]) {
+            if (report.hasReportInfo && report.reportInfo.reportGUID != nil)
+                reportGUID = report.reportInfo.reportGUID;
+        }
+
+        NSString *reporterKey = @"[TODO]";
+        if (crashReporterKey)
+            reporterKey = crashReporterKey;
+
         NSString *hardwareModel = @"???";
         if (report.hasMachineInfo && report.machineInfo.modelName != nil)
             hardwareModel = report.machineInfo.modelName;
 
         [text appendFormat: @"Incident Identifier: %@\n", reportGUID];
-        [text appendFormat: @"CrashReporter Key:   [TODO]\n"];
+        [text appendFormat: @"CrashReporter Key:   %@\n", reporterKey];
         [text appendFormat: @"Hardware Model:      %@\n", hardwareModel];
     }
     
@@ -233,8 +244,14 @@ static NSInteger binaryImageSort(id binary1, id binary2, void *context) {
         NSString *osBuild = @"???";
         if (report.systemInfo.operatingSystemBuild != nil)
             osBuild = report.systemInfo.operatingSystemBuild;
-        
-        [text appendFormat: @"Date/Time:       %@\n", report.systemInfo.timestamp];
+      
+        NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+        NSDateFormatter *rfc3339Formatter = [[NSDateFormatter alloc] init];
+        [rfc3339Formatter setLocale:enUSPOSIXLocale];
+        [rfc3339Formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
+        [rfc3339Formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+
+        [text appendFormat: @"Date/Time:       %@\n", [rfc3339Formatter stringFromDate:report.systemInfo.timestamp]];
         [text appendFormat: @"OS Version:      %@ %@ (%@)\n", osName, report.systemInfo.operatingSystemVersion, osBuild];
         [text appendFormat: @"Report Version:  104\n"];        
     }
@@ -384,7 +401,11 @@ static NSInteger binaryImageSort(id binary1, id binary2, void *context) {
                         case CPU_SUBTYPE_ARM_V7:
                             archName = @"armv7";
                             break;
-                            
+
+                        case CPU_SUBTYPE_ARM_V7S:
+                            archName = @"armv7s";
+                            break;
+
                         default:
                             archName = @"arm-unknown";
                             break;
@@ -476,6 +497,10 @@ static NSInteger binaryImageSort(id binary1, id binary2, void *context) {
               archName = @"armv7";
               break;
               
+            case CPU_SUBTYPE_ARM_V7S:
+              archName = @"armv7s";
+              break;
+
             default:
               archName = @"arm-unknown";
               break;
@@ -553,10 +578,12 @@ static NSInteger binaryImageSort(id binary1, id binary2, void *context) {
         pcOffset = frameInfo.instructionPointer - imageInfo.imageBaseAddress;
         NSString *imagePath = [imageInfo.imageName stringByStandardizingPath];
         NSString *appBundleContentsPath = [[report.processInfo.processPath stringByDeletingLastPathComponent] stringByDeletingLastPathComponent]; 
-      
-        if (![imagePath isEqual: report.processInfo.processPath] && ![imagePath hasPrefix:appBundleContentsPath]) {
-          symbol = frameInfo.symbolName;
-          pcOffset = frameInfo.instructionPointer - frameInfo.symbolStart;
+        
+        if ([frameInfo respondsToSelector:@selector(symbolName)]) {
+          if (![imagePath isEqual: report.processInfo.processPath] && ![imagePath hasPrefix:appBundleContentsPath]) {
+            symbol = frameInfo.symbolName;
+            pcOffset = frameInfo.instructionPointer - frameInfo.symbolStart;
+          }
         }
     }
   
@@ -567,7 +594,7 @@ static NSInteger binaryImageSort(id binary1, id binary2, void *context) {
     
     /* Make sure UTF8/16 characters are handled correctly */
     NSInteger offset = 0;
-    NSInteger index = 0;
+    NSUInteger index = 0;
     for (index = 0; index < [imageName length]; index++) {
         NSRange range = [imageName rangeOfComposedCharacterSequenceAtIndex:index];
         if (range.length > 1) {

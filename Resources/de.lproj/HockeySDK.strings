@@ -79,7 +79,7 @@
 
 "UpdateShowPreviousVersions" = "Zeige frühere Versionen...";
 
-"UpdateNoUpdateAvailableTitle" = "Kein Update Verfügbar";
+"UpdateNoUpdateAvailableTitle" = "Kein Update verfügbar";
 
 "UpdateNoUpdateAvailableMessage" = "%@ ist bereits die aktuellste Version.";
 
@@ -107,3 +107,122 @@
 /* Update Simulator Warning */
 
 "UpdateSimulatorMessage" = "Hockey funktioniert nicht im Simulator.";
+
+
+
+
+/* Feedback */
+
+
+/* New Message Alert */
+
+/* Alert Title */
+"HockeyFeedbackNewMessageTitle" = "Neue Antwort verfügbar";
+
+/* Alert Text */
+"HockeyFeedbackNewMessageText" = "Eine neue Antwort auf Ihr Feedback ist angekommen. Möchten Sie diese anschauen?";
+
+/* Alert Ignore Button */
+"HockeyFeedbackIgnore" = "Ignorieren";
+
+/* Alert Show Button */
+"HockeyFeedbackShow" = "Anzeigen";
+
+
+/* List View */
+
+/* Title */
+"HockeyFeedbackListTitle" = "Feedback";
+
+/* Last Updated */
+"HockeyFeedbackListLastUpdated" = "Letzte Aktualisierung: %@";
+
+/* Never Updated */
+"HockeyFeedbackListNeverUpdated" = "Nie";
+
+/* Provide Feedback Button Title */
+"HockeyFeedbackListButonWriteFeedback" = "Feedback schreiben";
+
+/* Add a Response Button Title */
+"HockeyFeedbackListButonWriteResponse" = "Antwort hinzufügen";
+
+/* User Data Set Name Button Title */
+"HockeyFeedbackListButonUserDataSetName" = "Ihren Name eintragen";
+
+/* User Data Set Email Button Title */
+"HockeyFeedbackListButonUserDataSetEmail" = "Ihre Email eintragen";
+
+/* User Data With Name Button Title */
+"HockeyFeedbackListButonUserDataWithName" = "Name: %@";
+
+/* User Data With Email Button Title */
+"HockeyFeedbackListButonUserDataWithEmail" = "Email: %@";
+
+/* Button title for deleting all local messages*/
+"HockeyFeedbackListButonDeleteAllMessages" = "Alle Nachrichten löchen";
+
+/* Message pending to be send */
+"HockeyFeedbackListMessagePending" = "Pending";
+
+
+/* Delete All Messages Action Sheet / Alert View */
+
+/* Title for the Action Sheet */
+"HockeyFeedbackListDeleteAllTitle" = "Dies wird alle Nachrichten löschen.";
+
+/* Button Title to perform delete action */
+"HockeyFeedbackListDeleteAllDelete" = "Löschen";
+
+/* Button Title to cancel delete action */
+"HockeyFeedbackListDeleteAllCancel" = "Abbrechen";
+
+
+/* Open/Copy Link In Safari Action Sheet / Alert View */
+
+/* Button Title to cancel */
+"HockeyFeedbackListLinkActionCancel" = "Abbrechen";
+
+/* Button Title to Open the Link */
+"HockeyFeedbackListLinkActionOpen" = "Öffnen";
+
+/* Button Title to Copy the Link */
+"HockeyFeedbackListLinkActionCopy" = "Kopieren";
+
+
+/* UIActivity */
+
+/* Activity Sharing Button Title, App Name will be inserted */
+"HockeyFeedbackActivityButtonTitle" = "%@ Feedback";
+
+/* if there can no app name be found, use this instead for HockeyFeedbackActivityButtonTitle */
+"HockeyFeedbackActivityAppPlaceholder" = "App";
+
+
+/* Compose Message */
+
+/* Title */
+"HockeyFeedbackComposeTitle" = "Neues Feedback";
+
+/* Send button */
+"HockeyFeedbackComposeSend" = "Absenden";
+
+
+/* Set User Data */
+
+/* Title */
+"HockeyFeedbackUserDataTitle" = "Über mich";
+
+/* Description On What Should Be Entered */
+"HockeyFeedbackUserDataDescription" = "Bitte tragen Sie ihre Daten ein bevor Sie eine Nachricht schreiben.";
+
+/* Name Field */
+"HockeyFeedbackUserDataName" = "Name";
+
+/* Name Placeholder */
+"HockeyFeedbackUserDataNamePlaceHolder" = "Klaus Mustermann";
+
+/* Email Field */
+"HockeyFeedbackUserDataEmail" = "Email";
+
+/* Email Placeholder */
+"HockeyFeedbackUserDataEmailPlaceholder" = "beispiel@email.com";
