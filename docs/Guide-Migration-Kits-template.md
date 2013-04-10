@@ -10,7 +10,7 @@ First of all you should remove all files from prior versions of either QuincyKit
 
 ### QuincyKit
 
-In Xcode open the `Project Navigator` (⌘+1). In the search field at the bottom enter "Quincy". Search should find the following files:
+In Xcode open the `Project Navigator` (⌘+1). In the search field at the bottom enter "Quincy". QuincyKit is installed, if search finds the following files:
 
 * BWQuincyManager.h
 * BWQuincyManager.m
@@ -20,16 +20,20 @@ Delete them all ("Move to Trash"). Or if you have them grouped into a folder (fo
 
 ### HockeyKit
 
-In Xcode open the `Project Navigator` (⌘+1). In the search field at the bottom enter "Hockey". You should find different files with the string "Hockey" in it, for example:
+In Xcode open the `Project Navigator` (⌘+1). In the search field at the bottom enter "Hockey". HockeyKit is installed, if search finds for example:
 
 * BWHockeyManager.h
 * Hockey.bundle
 
 All of them should be in one folder/group in Xcode. Remove that folder.
 
-### HockeySDK-iOS
+### HockeySDK-iOS before v2.5
 
 In Xcode open the `Project Navigator` (⌘+1). In the search field at the bottom enter "CNSHockeyManager". If search returns any results you have the first release of our unified SDK added to your project. Even if you added it as a git submodule we would suggest you remove it first. 
+
+### HockeySDK-iOS v2.5.x
+
+In Xcode open the `Project Navigator` (⌘+1). In the search field at the bottom enter `HockeySDK.framework`. If search returns any results you have the first release of our unified SDK added to your project. Even if you added it as a git submodule we would suggest you remove it first. Repeat the same for `CrashReporter.framework` and `HockeySDKResources.bundle`.
 
 ### Final Steps
 
@@ -78,7 +82,7 @@ Now follow the steps described in our [setup guide](http://support.hockeyapp.net
 
 After you have finished the setup guide make sure everything works as expected and then delete the out commented lines from above.
 
-### HockeySDK-iOS
+### HockeySDK-iOS before 2.5
 
 In your application delegate (for example `AppDelegate.m`) search for the following lines:
 
@@ -100,6 +104,16 @@ Now follow the steps described in our [setup guide](http://support.hockeyapp.net
 
 After you have finished the setup guide make sure everything works as expected and then delete the out commented lines from above.
 
+### HockeySDK-iOS 2.5.x
+
+THere are no changes to the SDK setup code required. Some delegates methods are deprecated and should be replaced as soon as feasible.
+
+The following delegates in `BITCrashManagerDelegate` moved to `BITHockeyManagerDelegate`:
+
+- `- (NSString *)userNameForCrashManager:(BITCrashManager *)crashManager;` is now `- (NSString *)userNameForHockeyManager:(BITHockeyManager *)hockeyManager componentManager:(BITHockeyBaseManager *)componentManager;`
+- `- (NSString *)userEmailForCrashManager:(BITCrashManager *)crashManager;` is now `- (NSString *)userEmailForHockeyManager:(BITHockeyManager *)hockeyManager componentManager:(BITHockeyBaseManager *)componentManager;`
+
+
 ## Troubleshooting
 
 ### ld: warning: directory not found for option '....QuincyKit.....'
@@ -108,4 +122,4 @@ This warning means there is still a `Framework Search Path` pointing to the fold
 
 ## Advanced Migration
 
-If you used any optional API calls, for example adding a custom description to a crash report, migrating those would exceed the scope of this guide. Please have a look at the [API documentation](https://github.com/bitstadium/HockeySDK-iOS/downloads). 
+If you used any optional API calls, for example adding a custom description to a crash report, migrating those would exceed the scope of this guide. Please have a look at the [API documentation](http://hockeyapp.net/releases/). 

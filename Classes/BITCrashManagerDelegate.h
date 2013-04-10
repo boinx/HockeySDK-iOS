@@ -1,7 +1,7 @@
 /*
  * Author: Andreas Linde <mail@andreaslinde.de>
  *
- * Copyright (c) 2012 HockeyApp, Bit Stadium GmbH.
+ * Copyright (c) 2012-2013 HockeyApp, Bit Stadium GmbH.
  * All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person
@@ -63,7 +63,7 @@
  @warning When returning a non nil value, crash reports are not anonymous any
  more and the alerts will not show the "anonymous" word!
  */
--(NSString *)userNameForCrashManager:(BITCrashManager *)crashManager;
+-(NSString *)userNameForCrashManager:(BITCrashManager *)crashManager DEPRECATED_ATTRIBUTE;
 
 
 
@@ -76,7 +76,7 @@
  @warning When returning a non nil value, crash reports are not anonymous any
  more and the alerts will not show the "anonymous" word!
  */
--(NSString *)userEmailForCrashManager:(BITCrashManager *)crashManager;
+-(NSString *)userEmailForCrashManager:(BITCrashManager *)crashManager DEPRECATED_ATTRIBUTE;
 
 
 

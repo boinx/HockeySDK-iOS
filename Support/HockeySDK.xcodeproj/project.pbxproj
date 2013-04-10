@@ -41,7 +41,6 @@
 		1E1127C916580C87007067A2 /* buttonRoundedRegular@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1127C116580C87007067A2 /* buttonRoundedRegular@2x.png */; };
 		1E1127CA16580C87007067A2 /* buttonRoundedRegularHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1127C216580C87007067A2 /* buttonRoundedRegularHighlighted.png */; };
 		1E1127CB16580C87007067A2 /* buttonRoundedRegularHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E1127C316580C87007067A2 /* buttonRoundedRegularHighlighted@2x.png */; };
-		1E27EF2515BB5033000AE995 /* HockeySDK.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E59555F15B6F80E00A03429 /* HockeySDK.strings */; };
 		1E49A43C1612223B00463151 /* BITFeedbackComposeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E49A42D1612223B00463151 /* BITFeedbackComposeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E49A43F1612223B00463151 /* BITFeedbackComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E49A42E1612223B00463151 /* BITFeedbackComposeViewController.m */; };
 		1E49A4421612223B00463151 /* BITFeedbackListViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E49A42F1612223B00463151 /* BITFeedbackListViewCell.h */; };
@@ -106,6 +105,7 @@
 		1EAF20A9162DC0F600957B1D /* feedbackActivity~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EAF20A5162DC0F600957B1D /* feedbackActivity~ipad.png */; };
 		1EAF20AA162DC0F600957B1D /* feedbackActiviy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EAF20A6162DC0F600957B1D /* feedbackActiviy.png */; };
 		1EAF20AB162DC0F600957B1D /* feedbackActiviy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EAF20A7162DC0F600957B1D /* feedbackActiviy@2x.png */; };
+		1EB52FD5167B766100C801D5 /* HockeySDK.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E59555F15B6F80E00A03429 /* HockeySDK.strings */; };
 		1EC69F601615001500808FD9 /* BITHockeyManagerPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EC69F5D1615001500808FD9 /* BITHockeyManagerPrivate.h */; };
 		1EF95CA6162CB037000AE3AD /* BITFeedbackActivity.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EF95CA4162CB036000AE3AD /* BITFeedbackActivity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EF95CA7162CB037000AE3AD /* BITFeedbackActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF95CA5162CB036000AE3AD /* BITFeedbackActivity.m */; };
@@ -179,19 +179,12 @@
 		1E5954F215B6F24A00A03429 /* libHockeySDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHockeySDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E59550A15B6F45800A03429 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HockeySDKResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E59556015B6F80E00A03429 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HockeySDK.strings; sourceTree = "<group>"; };
-		1E59556215B6F81500A03429 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HockeySDK.strings; sourceTree = "<group>"; };
 		1E59556415B6F81C00A03429 /* es */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HockeySDK.strings; sourceTree = "<group>"; };
 		1E59556615B6F82300A03429 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/HockeySDK.strings; sourceTree = "<group>"; };
 		1E59556815B6F82A00A03429 /* it */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/HockeySDK.strings; sourceTree = "<group>"; };
 		1E59556A15B6F83100A03429 /* ja */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/HockeySDK.strings; sourceTree = "<group>"; };
-		1E59556C15B6F83700A03429 /* nl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HockeySDK.strings; sourceTree = "<group>"; };
-		1E59556E15B6F84000A03429 /* pt-PT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/HockeySDK.strings"; sourceTree = "<group>"; };
 		1E59557015B6F84700A03429 /* pt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/HockeySDK.strings; sourceTree = "<group>"; };
 		1E59557215B6F84D00A03429 /* ru */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/HockeySDK.strings; sourceTree = "<group>"; };
-		1E59557415B6F85700A03429 /* sv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/HockeySDK.strings; sourceTree = "<group>"; };
-		1E59557615B6F85E00A03429 /* tr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/HockeySDK.strings; sourceTree = "<group>"; };
-		1E59557815B6F86600A03429 /* zh_CN */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = zh_CN; path = zh_CN.lproj/HockeySDK.strings; sourceTree = "<group>"; };
-		1E59557A15B6F86E00A03429 /* zh_TW */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = zh_TW; path = zh_TW.lproj/HockeySDK.strings; sourceTree = "<group>"; };
 		1E5955BB15B71C8600A03429 /* authorize_denied.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = authorize_denied.png; sourceTree = "<group>"; };
 		1E5955BC15B71C8600A03429 /* authorize_denied@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "authorize_denied@2x.png"; sourceTree = "<group>"; };
 		1E5955BD15B71C8600A03429 /* authorize_request.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = authorize_request.png; sourceTree = "<group>"; };
@@ -203,6 +196,8 @@
 		1E5955C515B71C8600A03429 /* IconGradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconGradient@2x.png"; sourceTree = "<group>"; };
 		1E5955FA15B7877A00A03429 /* BITHockeyManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITHockeyManagerDelegate.h; sourceTree = "<group>"; };
 		1E66CA9115D4100500F35BED /* buildnumber.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = buildnumber.xcconfig; sourceTree = "<group>"; };
+		1E6DDCEE169E290C0076C65D /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/HockeySDK.strings; sourceTree = "<group>"; };
+		1E6F0450167B5E5600ED1C86 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/HockeySDK.strings"; sourceTree = "<group>"; };
 		1E71509A15B5C76F004E88FF /* HockeySDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HockeySDK.h; sourceTree = "<group>"; };
 		1E754DC61621BC170070AB92 /* HockeySDK.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = HockeySDK.xcconfig; sourceTree = "<group>"; };
 		1E754E561621FBB70070AB92 /* BITCrashManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITCrashManager.h; sourceTree = "<group>"; };
@@ -211,17 +206,20 @@
 		1E754E591621FBB70070AB92 /* BITCrashManagerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITCrashManagerPrivate.h; sourceTree = "<group>"; };
 		1E754E5A1621FBB70070AB92 /* BITCrashReportTextFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITCrashReportTextFormatter.h; sourceTree = "<group>"; };
 		1E754E5B1621FBB70070AB92 /* BITCrashReportTextFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITCrashReportTextFormatter.m; sourceTree = "<group>"; };
+		1EA512DF167F7EF000FC9FBA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/HockeySDK.strings"; sourceTree = "<group>"; };
 		1EACC979162F041E007578C5 /* BITAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITAttributedLabel.h; sourceTree = "<group>"; };
 		1EACC97A162F041E007578C5 /* BITAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITAttributedLabel.m; sourceTree = "<group>"; };
 		1EAF20A4162DC0F600957B1D /* feedbackActivity@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedbackActivity@2x~ipad.png"; sourceTree = "<group>"; };
 		1EAF20A5162DC0F600957B1D /* feedbackActivity~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedbackActivity~ipad.png"; sourceTree = "<group>"; };
 		1EAF20A6162DC0F600957B1D /* feedbackActiviy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedbackActiviy.png; sourceTree = "<group>"; };
 		1EAF20A7162DC0F600957B1D /* feedbackActiviy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedbackActiviy@2x.png"; sourceTree = "<group>"; };
+		1EB52FC3167B73D400C801D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HockeySDK.strings; sourceTree = "<group>"; };
 		1EC69F5D1615001500808FD9 /* BITHockeyManagerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITHockeyManagerPrivate.h; sourceTree = "<group>"; };
 		1EDA60CF15C2C1450032D10B /* HockeySDK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HockeySDK-Info.plist"; sourceTree = "<group>"; };
 		1EF95CA4162CB036000AE3AD /* BITFeedbackActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITFeedbackActivity.h; sourceTree = "<group>"; };
 		1EF95CA5162CB036000AE3AD /* BITFeedbackActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITFeedbackActivity.m; sourceTree = "<group>"; };
 		1EF95CA9162CB313000AE3AD /* BITFeedbackComposeViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITFeedbackComposeViewControllerDelegate.h; sourceTree = "<group>"; };
+		BEE0207C16C5107E004426EA /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HockeySDK.strings; sourceTree = "<group>"; };
 		E400561D148D79B500EB22B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E41EB465148D7BF50015DEDC /* BITHockeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITHockeyManager.h; sourceTree = "<group>"; };
 		E41EB466148D7BF50015DEDC /* BITHockeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITHockeyManager.m; sourceTree = "<group>"; };
@@ -531,11 +529,11 @@
 				ru,
 				sv,
 				tr,
-				zh_CN,
-				zh_TW,
-				"zh-Hans",
-				"zh-Hant",
 				hr,
+				zh,
+				"zh-Hans",
+				ro,
+				hu,
 			);
 			mainGroup = E400560F148D79B500EB22B9;
 			productRefGroup = E400561B148D79B500EB22B9 /* Products */;
@@ -564,7 +562,6 @@
 				1E5955CC15B71C8600A03429 /* buttonHighlight@2x.png in Resources */,
 				1E5955CF15B71C8600A03429 /* IconGradient.png in Resources */,
 				1E5955D015B71C8600A03429 /* IconGradient@2x.png in Resources */,
-				1E27EF2515BB5033000AE995 /* HockeySDK.strings in Resources */,
 				1EAF20A8162DC0F600957B1D /* feedbackActivity@2x~ipad.png in Resources */,
 				1EAF20A9162DC0F600957B1D /* feedbackActivity~ipad.png in Resources */,
 				1EAF20AA162DC0F600957B1D /* feedbackActiviy.png in Resources */,
@@ -577,6 +574,7 @@
 				1E1127C916580C87007067A2 /* buttonRoundedRegular@2x.png in Resources */,
 				1E1127CA16580C87007067A2 /* buttonRoundedRegularHighlighted.png in Resources */,
 				1E1127CB16580C87007067A2 /* buttonRoundedRegularHighlighted@2x.png in Resources */,
+				1EB52FD5167B766100C801D5 /* HockeySDK.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,7 +593,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Sets the target folders and the final framework product.\nFMK_NAME=HockeySDK\nFMK_VERSION=A\nFMK_RESOURCE_BUNDLE=HockeySDKResources\n\n# Documentation\nHOCKEYSDK_DOCSET_VERSION_NAME=\"de.bitstadium.${HOCKEYSDK_DOCSET_NAME}-${VERSION_STRING}\"\n\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nPRODUCTS_DIR=${SRCROOT}/../Products\nTEMP_DIR=${PRODUCTS_DIR}/Temp\nINSTALL_DIR=${TEMP_DIR}/${FMK_NAME}.framework\n\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator\nHEADERS_DIR=${WRK_DIR}/Release-iphoneos/usr/local/include\n\n# Building both architectures.\nxcodebuild -project \"HockeySDK.xcodeproj\" -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos\nxcodebuild -project \"HockeySDK.xcodeproj\" -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator\n\n# Cleaning the oldest.\nif [ -d \"${TEMP_DIR}\" ]\nthen\nrm -rf \"${TEMP_DIR}\"\nfi\n\n# Creates and renews the final product folder.\nmkdir -p \"${INSTALL_DIR}\"\nmkdir -p \"${INSTALL_DIR}/Versions\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers\"\n\n# Creates the internal links.\n# It MUST uses relative path, otherwise will not work when the folder is copied/moved.\nln -s \"${FMK_VERSION}\" \"${INSTALL_DIR}/Versions/Current\"\nln -s \"Versions/Current/Headers\" \"${INSTALL_DIR}/Headers\"\nln -s \"Versions/Current/Resources\" \"${INSTALL_DIR}/Resources\"\nln -s \"Versions/Current/${FMK_NAME}\" \"${INSTALL_DIR}/${FMK_NAME}\"\n\n# Copies the headers and resources files to the final product folder.\ncp -R \"${SRCROOT}/build/Release-iphoneos/include/HockeySDK/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers/\"\ncp -R \"${DEVICE_DIR}/${FMK_RESOURCE_BUNDLE}.bundle\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/\"\ncp -f \"${SRCROOT}/${FMK_NAME}.xcconfig\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/lib${FMK_NAME}.a\" \"${SIMULATOR_DIR}/lib${FMK_NAME}.a\" -output \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\"\n\n# Combine the CrashReporter static library into a new Hockey static library file if they are not already present and copy the public headers too\nif [ -z $(otool -L \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\" | grep 'libCrashReporter') ]\nthen\nlibtool -static -o \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\" \"${SRCROOT}/../Vendor/CrashReporter.framework/Versions/A/CrashReporter\"\nfi\n\nrm -r \"${WRK_DIR}\"\n\n# build embeddedframework folder and move framework into it\nmkdir \"${INSTALL_DIR}/../${FMK_NAME}.embeddedframework\"\nmv \"${INSTALL_DIR}\" \"${INSTALL_DIR}/../${FMK_NAME}.embeddedframework/${FMK_NAME}.framework\"\n\n# link Resources\nNEW_INSTALL_DIR=${TEMP_DIR}/${FMK_NAME}.embeddedframework\nmkdir \"${NEW_INSTALL_DIR}/Resources\"\nln -s \"../${FMK_NAME}.framework/Resources/${FMK_RESOURCE_BUNDLE}.bundle\" \"${NEW_INSTALL_DIR}/Resources/${FMK_RESOURCE_BUNDLE}.bundle\"\nln -s \"../${FMK_NAME}.framework/Resources/${FMK_NAME}.xcconfig\" \"${NEW_INSTALL_DIR}/Resources/${FMK_NAME}.xcconfig\"\n\n# copy license, changelog, documentation\ncp -f \"${SRCROOT}/../Docs/Changelog-template.md\" \"${TEMP_DIR}/CHANGELOG\"\ncp -f \"${SRCROOT}/../Docs/Guide-Installation-Setup-template.md\" \"${TEMP_DIR}/README.md\"\ncp -f \"${SRCROOT}/../LICENSE\" \"${TEMP_DIR}\"\nmkdir \"${TEMP_DIR}/${HOCKEYSDK_DOCSET_VERSION_NAME}.docset\"\ncp -R \"${SRCROOT}/../documentation/docset/Contents\" \"${TEMP_DIR}/${HOCKEYSDK_DOCSET_VERSION_NAME}.docset\"\n\n# build zip\ncd \"${PRODUCTS_DIR}\"\nrm -f \"${FMK_NAME}-iOS-${VERSION_STRING}.zip\"\ncd \"${TEMP_DIR}\"\nzip -yr \"../${FMK_NAME}-iOS-${VERSION_STRING}.zip\" \"./${FMK_NAME}.embeddedframework\" \"./CHANGELOG\" \"./README.md\" \"./LICENSE\" \"./${HOCKEYSDK_DOCSET_VERSION_NAME}.docset\" -x \\*/.*\n";
+			shellScript = "# Sets the target folders and the final framework product.\nFMK_NAME=HockeySDK\nFMK_VERSION=A\nFMK_RESOURCE_BUNDLE=HockeySDKResources\n\n# Documentation\nHOCKEYSDK_DOCSET_VERSION_NAME=\"de.bitstadium.${HOCKEYSDK_DOCSET_NAME}-${VERSION_STRING}\"\n\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nPRODUCTS_DIR=${SRCROOT}/../Products\nTEMP_DIR=${PRODUCTS_DIR}/Temp\nINSTALL_DIR=${TEMP_DIR}/${FMK_NAME}.framework\n\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator\nHEADERS_DIR=${WRK_DIR}/Release-iphoneos/usr/local/include\n\n# Building both architectures.\nxcodebuild -project \"HockeySDK.xcodeproj\" -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos\nxcodebuild -project \"HockeySDK.xcodeproj\" -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator\n\n# Cleaning the oldest.\nif [ -d \"${TEMP_DIR}\" ]\nthen\nrm -rf \"${TEMP_DIR}\"\nfi\n\n# Creates and renews the final product folder.\nmkdir -p \"${INSTALL_DIR}\"\nmkdir -p \"${INSTALL_DIR}/Versions\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers\"\n\n# Creates the internal links.\n# It MUST uses relative path, otherwise will not work when the folder is copied/moved.\nln -s \"${FMK_VERSION}\" \"${INSTALL_DIR}/Versions/Current\"\nln -s \"Versions/Current/Headers\" \"${INSTALL_DIR}/Headers\"\nln -s \"Versions/Current/Resources\" \"${INSTALL_DIR}/Resources\"\nln -s \"Versions/Current/${FMK_NAME}\" \"${INSTALL_DIR}/${FMK_NAME}\"\n\n# Copies the headers and resources files to the final product folder.\ncp -R \"${SRCROOT}/build/Release-iphoneos/include/HockeySDK/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers/\"\ncp -R \"${DEVICE_DIR}/${FMK_RESOURCE_BUNDLE}.bundle\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/\"\ncp -f \"${SRCROOT}/${FMK_NAME}.xcconfig\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/lib${FMK_NAME}.a\" \"${SIMULATOR_DIR}/lib${FMK_NAME}.a\" -output \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\"\n\n# Combine the CrashReporter static library into a new Hockey static library file if they are not already present and copy the public headers too\nif [ -z $(otool -L \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\" | grep 'libCrashReporter') ]\nthen\nlibtool -static -o \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\" \"${SRCROOT}/../Vendor/CrashReporter.framework/Versions/A/CrashReporter\"\nfi\n\nrm -r \"${WRK_DIR}\"\n\n# build embeddedframework folder and move framework into it\nmkdir \"${INSTALL_DIR}/../${FMK_NAME}.embeddedframework\"\nmv \"${INSTALL_DIR}\" \"${INSTALL_DIR}/../${FMK_NAME}.embeddedframework/${FMK_NAME}.framework\"\n\n# link Resources\nNEW_INSTALL_DIR=${TEMP_DIR}/${FMK_NAME}.embeddedframework\nmkdir \"${NEW_INSTALL_DIR}/Resources\"\nln -s \"../${FMK_NAME}.framework/Resources/${FMK_RESOURCE_BUNDLE}.bundle\" \"${NEW_INSTALL_DIR}/Resources/${FMK_RESOURCE_BUNDLE}.bundle\"\nln -s \"../${FMK_NAME}.framework/Resources/${FMK_NAME}.xcconfig\" \"${NEW_INSTALL_DIR}/Resources/${FMK_NAME}.xcconfig\"\n\n# copy license, changelog, documentation\ncp -f \"${SRCROOT}/../Docs/Changelog-template.md\" \"${TEMP_DIR}/CHANGELOG\"\ncp -f \"${SRCROOT}/../Docs/Guide-Installation-Setup-template.md\" \"${TEMP_DIR}/README.md\"\ncp -f \"${SRCROOT}/../LICENSE\" \"${TEMP_DIR}\"\nmkdir \"${TEMP_DIR}/${HOCKEYSDK_DOCSET_VERSION_NAME}.docset\"\ncp -R \"${SRCROOT}/../documentation/docset/Contents\" \"${TEMP_DIR}/${HOCKEYSDK_DOCSET_VERSION_NAME}.docset\"\n\n# build zip\ncd \"${PRODUCTS_DIR}\"\nrm -f \"${FMK_NAME}-iOS-${VERSION_STRING}.zip\"\ncd \"${TEMP_DIR}\"\nzip -yr \"../${FMK_NAME}-iOS-${VERSION_STRING}.zip\" \"./${FMK_NAME}.embeddedframework\" \"./CHANGELOG\" \"./README.md\" \"./LICENSE\" \"./${HOCKEYSDK_DOCSET_VERSION_NAME}.docset\" -x \\*/.*\n\n#copy to output dir on cisimple\nif [ $CISIMPLE ]; then\n    if [ ! -d \"${CONFIGURATION_BUILD_DIR}\" ]; then\n        mkdir \"${CONFIGURATION_BUILD_DIR}\"\n    fi\n    cd \"${PRODUCTS_DIR}\"\n    cp \"${FMK_NAME}-iOS-${VERSION_STRING}.zip\" \"${CONFIGURATION_BUILD_DIR}/${FMK_NAME}-iOS-${VERSION_STRING}.zip\"\nfi";
 		};
 		1E8E66B215BC3D8200632A2E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -608,7 +606,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/appledoc \\\n  --output \"${SOURCE_ROOT}/../documentation\" \\\n  --ignore Vendor \\\n  --ignore .m \\\n  --create-html \\\n  --create-docset \\\n  --install-docset \\\n  --keep-intermediate-files \\\n  --project-name \"${HOCKEYSDK_DOCSET_NAME} ${VERSION_STRING}\" \\\n  --project-version \"${VERSION_STRING}\" \\\n  --project-company \"BitStadium GmbH\" \\\n  --company-id \"de.bitstadium\" \\\n  --docset-bundle-name \"${HOCKEYSDK_DOCSET_NAME} ${VERSION_STRING}\" \\\n  --docset-feed-name \"${HOCKEYSDK_DOCSET_NAME}\" \\\n  --docset-platform-family \"iphoneos\" \\\n  --index-desc \"${SOURCE_ROOT}/../docs/index.md\" \\\n  --include \"${SOURCE_ROOT}/../docs/\" \\\n  --merge-categories \\\n  --no-repeat-first-par \\\n  --warn-undocumented-object \\\n  --warn-undocumented-member \\\n  --warn-empty-description \\\n  --warn-unknown-directive \\\n  --warn-invalid-crossref \\\n  --warn-missing-arg \\\n  --logformat xcode \\\n  --exit-threshold 2 \\\n  \"${SOURCE_ROOT}/../\" \\\n";
+			shellScript = "/usr/local/bin/appledoc \\\n  --output \"${SOURCE_ROOT}/../documentation\" \\\n  --ignore Vendor \\\n  --ignore Products \\\n  --ignore .m \\\n  --create-html \\\n  --create-docset \\\n  --install-docset \\\n  --keep-intermediate-files \\\n  --project-name \"${HOCKEYSDK_DOCSET_NAME} ${VERSION_STRING}\" \\\n  --project-version \"${VERSION_STRING}\" \\\n  --project-company \"BitStadium GmbH\" \\\n  --company-id \"de.bitstadium\" \\\n  --docset-bundle-name \"${HOCKEYSDK_DOCSET_NAME} ${VERSION_STRING}\" \\\n  --docset-feed-name \"${HOCKEYSDK_DOCSET_NAME}\" \\\n  --docset-desc \"\" \\\n  --docset-platform-family \"iphoneos\" \\\n  --index-desc \"${SOURCE_ROOT}/../docs/index.md\" \\\n  --include \"${SOURCE_ROOT}/../docs/index.html\" \\\n  --include \"${SOURCE_ROOT}/../docs/\" \\\n  --merge-categories \\\n  --no-repeat-first-par \\\n  --warn-undocumented-object \\\n  --warn-undocumented-member \\\n  --warn-empty-description \\\n  --warn-unknown-directive \\\n  --warn-invalid-crossref \\\n  --warn-missing-arg \\\n  --logformat xcode \\\n  --exit-threshold 2 \\\n  \"${SOURCE_ROOT}/../\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -668,20 +666,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				1E59556015B6F80E00A03429 /* de */,
-				1E59556215B6F81500A03429 /* en */,
 				1E59556415B6F81C00A03429 /* es */,
 				1E59556615B6F82300A03429 /* fr */,
 				1E59556815B6F82A00A03429 /* it */,
 				1E59556A15B6F83100A03429 /* ja */,
-				1E59556C15B6F83700A03429 /* nl */,
-				1E59556E15B6F84000A03429 /* pt-PT */,
 				1E59557015B6F84700A03429 /* pt */,
 				1E59557215B6F84D00A03429 /* ru */,
-				1E59557415B6F85700A03429 /* sv */,
-				1E59557615B6F85E00A03429 /* tr */,
-				1E59557815B6F86600A03429 /* zh_CN */,
-				1E59557A15B6F86E00A03429 /* zh_TW */,
 				1E36D8B816667611000B134C /* hr */,
+				1E6F0450167B5E5600ED1C86 /* pt-PT */,
+				1EB52FC3167B73D400C801D5 /* en */,
+				1EA512DF167F7EF000FC9FBA /* zh-Hans */,
+				1E6DDCEE169E290C0076C65D /* ro */,
+				BEE0207C16C5107E004426EA /* hu */,
 			);
 			name = HockeySDK.strings;
 			sourceTree = "<group>";

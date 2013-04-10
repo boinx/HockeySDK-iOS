@@ -1,7 +1,7 @@
 /*
  * Author: Andreas Linde <mail@andreaslinde.de>
  *
- * Copyright (c) 2012 HockeyApp, Bit Stadium GmbH.
+ * Copyright (c) 2012-2013 HockeyApp, Bit Stadium GmbH.
  * All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person
@@ -182,7 +182,7 @@
   [self.tableView flashScrollIndicators];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
   if (self.userDataComposeFlow) {
     self.userDataComposeFlow = NO;
   }
@@ -192,20 +192,20 @@
   
   if ([self.manager numberOfMessages] == 0 &&
       [self.manager askManualUserDataAvailable] &&
-      ([self.manager requireManualUserDataMissing] ||
-       ![self.manager didAskUserData])
+      [self.manager requireManualUserDataMissing] &&
+      ![self.manager didAskUserData]
       ) {
     self.userDataComposeFlow = YES;
     
     BITFeedbackUserDataViewController *userController = [[BITFeedbackUserDataViewController alloc] initWithStyle:UITableViewStyleGrouped];
     userController.delegate = self;
     
-    [self.navigationController pushViewController:userController animated:NO];
+    [self.navigationController pushViewController:userController animated:YES];
   } else {
     [self.tableView reloadData];
   }
 
-  [super viewWillAppear:animated];
+  [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -255,7 +255,7 @@
                                    ];
     [deleteAction setTag:0];
     [deleteAction setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
-    [deleteAction showInView:self.view];
+    [deleteAction showInView:[self viewForShowingActionSheetOnPhone]];
   } else {
     UIAlertView *deleteAction = [[UIAlertView alloc] initWithTitle:BITHockeyLocalizedString(@"HockeyFeedbackListButonDeleteAllMessages")
                                                            message:BITHockeyLocalizedString(@"HockeyFeedbackListDeleteAllTitle")
@@ -268,6 +268,23 @@
   }
 }
 
+- (UIView*) viewForShowingActionSheetOnPhone {
+  //find the topmost presented viewcontroller
+  //and use its view
+  UIViewController* topMostPresentedViewController = self.view.window.rootViewController;
+  while(topMostPresentedViewController.presentedViewController) {
+    topMostPresentedViewController = topMostPresentedViewController.presentedViewController;
+  }
+  UIView* view = topMostPresentedViewController.view;
+  
+  if(nil == view) {
+    //hope for the best. Should work
+    //on simple view(controller) hierarchies
+    view = self.view;
+  }
+  
+  return view;
+}
 
 #pragma mark - BITFeedbackUserDataDelegate
 
@@ -360,7 +377,7 @@
       cell.textLabel.textColor = DEFAULT_TEXTCOLOR;
       cell.accessoryType = UITableViewCellAccessoryNone;
       cell.selectionStyle = UITableViewCellSelectionStyleNone;
-      cell.textLabel.textAlignment = UITextAlignmentCenter;
+      cell.textLabel.textAlignment = kBITTextLabelAlignmentCenter;
     }
     
     cell.textLabel.text = [NSString stringWithFormat:BITHockeyLocalizedString(@"HockeyFeedbackListLastUpdated"),
@@ -420,11 +437,11 @@
       if ([self.manager requireUserName] == BITFeedbackUserDataElementRequired ||
           ([self.manager requireUserName] == BITFeedbackUserDataElementOptional && [self.manager userName] != nil)
           ) {
-        title = [NSString stringWithFormat:BITHockeyLocalizedString(@"HockeyFeedbackListButonUserDataWithName"), [self.manager userName]];
+        title = [NSString stringWithFormat:BITHockeyLocalizedString(@"HockeyFeedbackListButonUserDataWithName"), [self.manager userName] ?: @"-"];
       } else if ([self.manager requireUserEmail] == BITFeedbackUserDataElementRequired ||
                  ([self.manager requireUserEmail] == BITFeedbackUserDataElementOptional && [self.manager userEmail] != nil)
                  ) {
-        title = [NSString stringWithFormat:BITHockeyLocalizedString(@"HockeyFeedbackListButonUserDataWithEmail"), [self.manager userEmail]];
+        title = [NSString stringWithFormat:BITHockeyLocalizedString(@"HockeyFeedbackListButonUserDataWithEmail"), [self.manager userEmail] ?: @"-"];
       } else if ([self.manager requireUserName] == BITFeedbackUserDataElementOptional) {
         title = BITHockeyLocalizedString(@"HockeyFeedbackListButonUserDataSetName");
       } else {
@@ -457,7 +474,7 @@
       
       statusLabel.font = [UIFont systemFontOfSize:10];
       statusLabel.textColor = DEFAULT_TEXTCOLOR;
-      statusLabel.textAlignment = UITextAlignmentCenter;
+      statusLabel.textAlignment = kBITTextLabelAlignmentCenter;
       statusLabel.backgroundColor = DEFAULT_BACKGROUNDCOLOR;
       statusLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
@@ -552,7 +569,7 @@
                                  ];
     [linkAction setTag:1];
     [linkAction setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
-    [linkAction showInView:self.view];
+    [linkAction showInView:[self viewForShowingActionSheetOnPhone]];
   } else {
     UIAlertView *linkAction = [[UIAlertView alloc] initWithTitle:[url absoluteString]
                                                          message:nil

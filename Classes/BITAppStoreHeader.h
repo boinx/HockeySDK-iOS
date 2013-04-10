@@ -2,7 +2,7 @@
  * Author: Andreas Linde <mail@andreaslinde.de>
  *         Peter Steinberger
  *
- * Copyright (c) 2012 HockeyApp, Bit Stadium GmbH.
+ * Copyright (c) 2012-2013 HockeyApp, Bit Stadium GmbH.
  * Copyright (c) 2011-2012 Peter Steinberger.
  * All rights reserved.
  *
@@ -33,8 +33,8 @@
 
 @interface BITAppStoreHeader : UIView
 
-@property (nonatomic, copy) NSString *headerLabel;
-@property (nonatomic, copy) NSString *subHeaderLabel;
+@property (nonatomic, copy) NSString *headerText;
+@property (nonatomic, copy) NSString *subHeaderText;
 @property (nonatomic, strong) UIImage *iconImage;
 
 @end

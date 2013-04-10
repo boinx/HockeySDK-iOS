@@ -2,7 +2,7 @@
  * Author: Andreas Linde <mail@andreaslinde.de>
  *         Kent Sutherland
  *
- * Copyright (c) 2012 HockeyApp, Bit Stadium GmbH.
+ * Copyright (c) 2012-2013 HockeyApp, Bit Stadium GmbH.
  * Copyright (c) 2011 Andreas Linde & Kent Sutherland.
  * All rights reserved.
  *
@@ -108,7 +108,7 @@ NSString *const kBITCrashManagerStatus = @"BITCrashManagerStatus";
     
     NSString *testValue = [[NSUserDefaults standardUserDefaults] stringForKey:kBITCrashManagerStatus];
     if (testValue) {
-      _crashManagerStatus = [[NSUserDefaults standardUserDefaults] integerForKey:kBITCrashManagerStatus];
+      _crashManagerStatus = (BITCrashManagerStatus) [[NSUserDefaults standardUserDefaults] integerForKey:kBITCrashManagerStatus];
     } else {
       // migrate previous setting if available
       if ([[NSUserDefaults standardUserDefaults] boolForKey:@"BITCrashAutomaticallySendReports"]) {
@@ -198,7 +198,7 @@ NSString *const kBITCrashManagerStatus = @"BITCrashManagerStatus";
     if ([rootObj objectForKey:kBITCrashApprovedReports])
       [_approvedCrashReports setDictionary:[rootObj objectForKey:kBITCrashApprovedReports]];
   } else {
-    BITHockeyLog(@"ERROR: Reading settings. %@", errorString);
+    BITHockeyLog(@"ERROR: Reading crash manager settings.");
   }
 }
 

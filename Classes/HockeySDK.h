@@ -1,7 +1,7 @@
 /*
  * Author: Andreas Linde <mail@andreaslinde.de>
  *
- * Copyright (c) 2012 HockeyApp, Bit Stadium GmbH.
+ * Copyright (c) 2012-2013 HockeyApp, Bit Stadium GmbH.
  * Copyright (c) 2011 Andreas Linde.
  * All rights reserved.
  *
@@ -51,18 +51,16 @@
 #define BITHockeyNetworkDidBecomeReachableNotification @"BITHockeyNetworkDidBecomeReachable"
 
 
-// hockey api error domain
+// hockey crash reporting api error domain
 typedef enum {
   BITCrashErrorUnknown,
   BITCrashAPIAppVersionRejected,
   BITCrashAPIReceivedEmptyResponse,
   BITCrashAPIErrorWithStatusCode
 } BITCrashErrorReason;
-extern NSString *const kBITCrashErrorDomain;
+extern NSString *const __attribute__((unused)) kBITCrashErrorDomain;
 
-// Update App Versions
-
-// hockey api error domain
+// hockey update api error domain
 typedef enum {
   BITUpdateErrorUnknown,
   BITUpdateAPIServerReturnedInvalidStatus,
@@ -71,12 +69,10 @@ typedef enum {
   BITUpdateAPIClientAuthorizationMissingSecret,
   BITUpdateAPIClientCannotCreateConnection
 } BITUpdateErrorReason;
-extern NSString *const kBITUpdateErrorDomain;
+extern NSString *const __attribute__((unused)) kBITUpdateErrorDomain;
 
 
-// Update App Versions
-
-// hockey api error domain
+// hockey feedback api error domain
 typedef enum {
   BITFeedbackErrorUnknown,
   BITFeedbackAPIServerReturnedInvalidStatus,
@@ -85,17 +81,16 @@ typedef enum {
   BITFeedbackAPIClientAuthorizationMissingSecret,
   BITFeedbackAPIClientCannotCreateConnection
 } BITFeedbackErrorReason;
-extern NSString *const kBITFeedbackErrorDomain;
+extern NSString *const __attribute__((unused)) kBITFeedbackErrorDomain;
 
 
 // HockeySDK
 
-// hockey api error domain
 typedef enum {
   BITHockeyErrorUnknown,
   HockeyAPIClientMissingJSONLibrary
 } BITHockeyErrorReason;
-extern NSString *const kBITHockeyErrorDomain;
+extern NSString *const __attribute__((unused)) kBITHockeyErrorDomain;
 
 
 #endif

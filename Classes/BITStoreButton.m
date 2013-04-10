@@ -2,7 +2,7 @@
  * Author: Andreas Linde <mail@andreaslinde.de>
  *         Peter Steinberger
  *
- * Copyright (c) 2012 HockeyApp, Bit Stadium GmbH.
+ * Copyright (c) 2012-2013 HockeyApp, Bit Stadium GmbH.
  * Copyright (c) 2011-2012 Peter Steinberger.
  * All rights reserved.
  *
@@ -185,7 +185,7 @@
 
 - (CGSize)sizeThatFits:(CGSize)size {
   CGSize constr = (CGSize){.height = self.frame.size.height, .width = BIT_MAX_WIDTH};
-  CGSize newSize = [self.buttonData.label sizeWithFont:self.titleLabel.font constrainedToSize:constr lineBreakMode:UILineBreakModeMiddleTruncation];
+  CGSize newSize = [self.buttonData.label sizeWithFont:self.titleLabel.font constrainedToSize:constr lineBreakMode:kBITLineBreakModeMiddleTruncation];
   CGFloat newWidth = newSize.width + (BIT_PADDING * 2);
   CGFloat newHeight = BIT_MIN_HEIGHT > newSize.height ? BIT_MIN_HEIGHT : newSize.height;
   

@@ -2,7 +2,7 @@
  * Author: Andreas Linde <mail@andreaslinde.de>
  *         Peter Steinberger
  *
- * Copyright (c) 2012 HockeyApp, Bit Stadium GmbH.
+ * Copyright (c) 2012-2013 HockeyApp, Bit Stadium GmbH.
  * Copyright (c) 2011 Andreas Linde, Peter Steinberger.
  * All rights reserved.
  *
@@ -49,7 +49,6 @@
 @implementation BITUpdateViewController {
   BOOL _kvoRegistered;
   BOOL _showAllVersions;
-  UIStatusBarStyle _statusBarStyle;
   BITAppStoreHeader *_appStoreHeader;
   BITStoreButton *_appStoreButton;
   
@@ -75,8 +74,8 @@
 
 - (void)updateAppStoreHeader {
   BITAppVersionMetaInfo *appVersion = _updateManager.newestAppVersion;
-  _appStoreHeader.headerLabel = appVersion.name;
-  _appStoreHeader.subHeaderLabel = _updateManager.companyName;
+  _appStoreHeader.headerText = appVersion.name;
+  _appStoreHeader.subHeaderText = _updateManager.companyName;
 }
 
 - (void)appDidBecomeActive {
@@ -339,8 +338,6 @@
     self.appStoreButtonState = AppStoreButtonStateOffline;
   _updateManager.currentHockeyViewController = self;
   [super viewWillAppear:animated];
-  _statusBarStyle = [[UIApplication sharedApplication] statusBarStyle];
-  [[UIApplication sharedApplication] setStatusBarStyle:(self.navigationController.navigationBar.barStyle == UIBarStyleDefault) ? UIStatusBarStyleDefault : UIStatusBarStyleBlackOpaque];
   [self redrawTableView];
 }
 
@@ -349,7 +346,6 @@
   //if the popover is still visible, dismiss it
   [_popOverController dismissPopoverAnimated:YES];
   [super viewWillDisappear:animated];
-  [[UIApplication sharedApplication] setStatusBarStyle:_statusBarStyle];
 }
 
 - (void)redrawTableView {

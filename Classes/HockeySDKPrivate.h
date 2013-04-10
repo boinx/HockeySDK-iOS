@@ -2,7 +2,7 @@
  * Author: Andreas Linde <mail@andreaslinde.de>
  *         Kent Sutherland
  *
- * Copyright (c) 2012 HockeyApp, Bit Stadium GmbH.
+ * Copyright (c) 2012-2013 HockeyApp, Bit Stadium GmbH.
  * Copyright (c) 2011 Andreas Linde & Kent Sutherland.
  * All rights reserved.
  *
@@ -104,3 +104,20 @@ __VA_ARGS__ \
 
 
 #endif
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0
+
+#define kBITTextLabelAlignmentCenter        UITextAlignmentCenter
+#define kBITTextLabelAlignmentLeft          UITextAlignmentLeft
+#define kBITTextLabelAlignmentRight         UITextAlignmentRight
+#define kBITLineBreakModeMiddleTruncation   UILineBreakModeMiddleTruncation
+
+#else
+
+#define kBITTextLabelAlignmentCenter        NSTextAlignmentCenter
+#define kBITTextLabelAlignmentLeft          NSTextAlignmentLeft
+#define kBITTextLabelAlignmentRight         NSTextAlignmentRight
+#define kBITLineBreakModeMiddleTruncation   NSLineBreakByTruncatingMiddle
+
+#endif
+

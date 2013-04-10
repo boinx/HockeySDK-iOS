@@ -1,7 +1,7 @@
 /*
  * Author: Andreas Linde <mail@andreaslinde.de>
  *
- * Copyright (c) 2012 HockeyApp, Bit Stadium GmbH.
+ * Copyright (c) 2012-2013 HockeyApp, Bit Stadium GmbH.
  * All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person
@@ -215,9 +215,9 @@
     NSString *userID = [[BITHockeyManager sharedHockeyManager].delegate
                         userIDForHockeyManager:[BITHockeyManager sharedHockeyManager]
                         componentManager:self];
-    if (self.userID) {
-      self.userID = userID;
+    if (userID) {
       availableViaDelegate = YES;
+      self.userID = userID;
     }
   }
   
@@ -251,8 +251,8 @@
                            userEmailForHockeyManager:[BITHockeyManager sharedHockeyManager]
                            componentManager:self];
     if (userEmail) {
-      self.userEmail = userEmail;
       availableViaDelegate = YES;
+      self.userEmail = userEmail;
       self.requireUserEmail = BITFeedbackUserDataElementDontShow;
     }
   }
@@ -264,6 +264,12 @@
   [self updateUserIDUsingDelegate];
   [self updateUserNameUsingDelegate];
   [self updateUserEmailUsingDelegate];
+
+  // if both values are shown via the delegates, we never ever did ask and will never ever ask for user data
+  if (self.requireUserName == BITFeedbackUserDataElementDontShow &&
+      self.requireUserEmail == BITFeedbackUserDataElementDontShow) {
+    self.didAskUserData = NO;
+  }
 }
 
 #pragma mark - Local Storage
@@ -508,6 +514,8 @@
 #pragma mark - User
 
 - (BOOL)askManualUserDataAvailable {
+  [self updateAppDefinedUserData];
+  
   if (self.requireUserName == BITFeedbackUserDataElementDontShow &&
       self.requireUserEmail == BITFeedbackUserDataElementDontShow)
     return NO;
@@ -516,6 +524,8 @@
 }
 
 - (BOOL)requireManualUserDataMissing {
+  [self updateAppDefinedUserData];
+  
   if (self.requireUserName == BITFeedbackUserDataElementRequired && !self.userName)
     return YES;
   
@@ -526,6 +536,8 @@
 }
 
 - (BOOL)isManualUserDataAvailable {
+  [self updateAppDefinedUserData];
+
   if ((self.requireUserName != BITFeedbackUserDataElementDontShow && self.userName) ||
       (self.requireUserEmail != BITFeedbackUserDataElementDontShow && self.userEmail))
     return YES;
@@ -598,13 +610,13 @@
           
           // TODO: match messages in state conflict
           
-          [messagesSendInProgress enumerateObjectsUsingBlock:^(id objSendInProgressMessage, NSUInteger messagesSendInProgressIdx, BOOL *stop) {
+          [messagesSendInProgress enumerateObjectsUsingBlock:^(id objSendInProgressMessage, NSUInteger messagesSendInProgressIdx, BOOL *stop2) {
             if ([[(NSDictionary *)objMessage objectForKey:@"token"] isEqualToString:[(BITFeedbackMessage *)objSendInProgressMessage token]]) {
               matchingSendInProgressOrInConflictMessage = objSendInProgressMessage;
-              *stop = YES;
+              *stop2 = YES;
             }
           }];
-          
+
           if (matchingSendInProgressOrInConflictMessage) {
             matchingSendInProgressOrInConflictMessage.date = [self parseRFC3339Date:[(NSDictionary *)objMessage objectForKey:@"created_at"]];
             matchingSendInProgressOrInConflictMessage.id = messageID;
@@ -891,7 +903,7 @@
 
 #pragma mark - UIAlertViewDelegate
 
-// invoke the selected action from the actionsheet for a location element
+// invoke the selected action from the action sheet for a location element
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
   
   _incomingMessagesAlertShowing = NO;

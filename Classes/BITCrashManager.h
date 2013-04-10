@@ -2,7 +2,7 @@
  * Author: Andreas Linde <mail@andreaslinde.de>
  *         Kent Sutherland
  *
- * Copyright (c) 2012 HockeyApp, Bit Stadium GmbH.
+ * Copyright (c) 2012-2013 HockeyApp, Bit Stadium GmbH.
  * Copyright (c) 2011 Andreas Linde & Kent Sutherland.
  * All rights reserved.
  *
@@ -61,7 +61,7 @@ extern NSString *const kBITCrashManagerStatus;
  
  Crashes are send the next time the app starts. If `crashManagerStatus` is set to `BITCrashManagerStatusAutoSend`,
  crashes will be send without any user interaction, otherwise an alert will appear allowing the users to decide
- wether they want to send the report or not. This module is not sending the reports right when the crash happens
+ whether they want to send the report or not. This module is not sending the reports right when the crash happens
  deliberately, because if is not safe to implement such a mechanism while being async-safe (any Objective-C code
  is _NOT_ async-safe!) and not causing more danger like a deadlock of the device, than helping. We found that users
  do start the app again because most don't know what happened, and you will get by far most of the reports.
@@ -146,6 +146,9 @@ extern NSString *const kBITCrashManagerStatus;
  Use this on startup, to check if the app starts the first time after it crashed
  previously. You can use this also to disable specific events, like asking
  the user to rate your app.
+ 
+ @warning This property only has a correct value, once `[BITHockeyManager startManager]` was
+ invoked!
  */
 @property (nonatomic, readonly) BOOL didCrashInLastSession;
 
